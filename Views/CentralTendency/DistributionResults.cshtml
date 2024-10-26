@@ -1,0 +1,84 @@
+﻿@model StatisticalCalculator.Models.DistributionResultsModel
+@{
+    ViewData["Title"] = "Resultados de la Distribución";
+}
+
+<h2>Resultados de la Distribución - @Model.DistributionType</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Resultados Estadísticos</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Media:</strong> @Model.Mean</p>
+                    <p><strong>Desviación Estándar:</strong> @Model.StdDev</p>
+                    <p><strong>Mediana:</strong> @Model.Median</p>
+                    <p><strong>Moda:</strong> @Model.Mode</p>
+                    <p><strong>Q1:</strong> @Model.Q1</p>
+                    <p><strong>Q3:</strong> @Model.Q3</p>
+                    <p><strong>Interpretación:</strong> @Model.Interpretation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Gráficas</h5>
+                </div>
+                <div class="card-body text-center">
+                    <canvas id="histogramCanvas" width="400" height="200"></canvas>
+                    <canvas id="boxplotCanvas" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 20px;">
+        <a asp-controller="CentralTendency" asp-action="InputNominal" class="btn btn-primary">Hacer otro cálculo</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var data = @Html.Raw(Json.Serialize(Model.Data));
+
+        // Generar Histograma
+        var histogramCanvas = document.getElementById('histogramCanvas').getContext('2d');
+        var histogramChart = new Chart(histogramCanvas, {
+            type: 'bar',
+            data: {
+                labels: Array.from({ length: 10 }, (_, i) => i * 10), // Cambia el rango según tus datos
+                datasets: [{
+                    label: 'Histograma',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Generar Boxplot (esto puede ser más complicado, puedes usar una librería específica o dibujar manualmente)
+        var boxplotCanvas = document.getElementById('boxplotCanvas').getContext('2d');
+                // Aquí debes implementar el código para crear un boxplot usando Chart.js o una biblioteca específica
+    </script>
+}
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Menú Principal";
+}
+
+<div class="container mt-5">
+    <h2>@ViewData["Title"]</h2>
+
+    <p>Seleccione la forma de ingresar los datos:</p>
+
+    <div class="row">
+        <!-- Opción para ingresar datos de forma nominal -->
+        <div class="col-md-6">
+            <a href="@Url.Action("InputNominal", "CentralTendency")" class="btn btn-primary btn-block">
+                Ingresar Datos Nominales
+            </a>
+        </div>
+
+        <!-- Opción para ingresar datos de forma consolidada -->
+        <div class="col-md-6">
+            <a href="@Url.Action("InputConsolidated", "CentralTendency")" class="btn btn-primary btn-block">
+                Ingresar Datos Consolidados
+            </a>
+        </div>
+    </div>
+</div>
+
+

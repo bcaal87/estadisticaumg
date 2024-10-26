@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <!-- Aquí es donde se coloca la imagen -->
+    <img src="~/images/logo.png" alt="Logo de Stadistics UMG" class="img-fluid mb-4" style="max-width: 200px;" />
+
+    <h1 class="display-4 text-primary">Bienvenido a Stadistics | UMG 2024</h1>
+    <p class="lead">Este proyecto es una herramienta interactiva diseñada para facilitar el aprendizaje de conceptos estadísticos fundamentales.</p>
+    <hr class="my-4" />
+    <p class="text-secondary">Aquí podrás calcular medidas de tendencia central, explorar distribuciones de datos y realizar análisis estadísticos básicos de forma sencilla y eficiente.</p>
+    <p class="text-muted">Este proyecto es parte de las actividades del curso de estadística de UMG - COBÁN, y tiene como objetivo reforzar los conocimientos adquiridos en clase.</p>
+    <a class="btn btn-dark btn-lg" asp-controller="CentralTendency" asp-action="InputNominal" role="button">
+        Comienza a Calcular <i class="fas fa-calculator"></i>
+    </a>
+    <a class="btn btn-outline-primary btn-lg ms-3" asp-controller="Home" asp-action="Privacy" role="button">
+        Integrantes <i class="fas fa-user-friends"></i>
+    </a>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Color de fondo claro */
+    }
+
+    .btn {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .btn:hover {
+            background-color: #343a40; /* Color oscuro al pasar el ratón */
+            color: #ffffff; /* Texto blanco */
+        }
+</style>
+
+
+

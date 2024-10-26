@@ -1,0 +1,45 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Ingresar Datos Nominales";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+            <!-- Formulario para ingresar la cantidad de datos -->
+            <form asp-action="ProcessNominalData" method="post">
+                <div class="form-group mb-4">
+                    <label for="count">Ingrese la cantidad de datos:</label>
+                    <input type="number" class="form-control" id="count" name="count" min="1" placeholder="Ej: 5" required />
+                    <small class="form-text text-muted">Ingrese la cantidad de valores nominales que desea procesar.</small>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar Cantidad</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sección para mostrar mensajes de error -->
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-danger mt-4">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@error.ErrorMessage</p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+

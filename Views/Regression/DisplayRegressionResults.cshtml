@@ -1,0 +1,191 @@
+﻿@model StatisticalCalculator.Models.RegressionModel
+@{
+    ViewData["Title"] = "Resultados de la Regresión";
+}
+
+<h2>Resultados de la Regresión Lineal</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card" style="height: 100%;">
+            <div class="card-header">
+                <h3>Resultados</h3>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div>
+                    <p><strong>Pendiente (Slope):</strong> @(double.IsNaN(Model.Slope) ? "No se pudo calcular (Varianza de X es 0)" : Model.Slope.ToString())</p>
+                    <p><strong>Intersección (Intercept):</strong> @(double.IsNaN(Model.Intercept) ? "No se pudo calcular" : Model.Intercept.ToString())</p>
+                    <p><strong>Coeficiente de Correlación:</strong> @Model.CorrelationCoefficient</p>
+                    <p><strong>Coeficiente de Determinación:</strong> @Model.DeterminationCoefficient</p>
+                    <p><strong>Procedimiento:</strong> @Model.Procedure</p>
+                </div>
+                <div class="mt-auto">
+                    <h3 class="mt-4">Datos Utilizados</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Valor de X</th>
+                                <th>Valor de Y</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.X.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.X[i]</td>
+                                    <td>@Model.Y[i]</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3">
+                    <a asp-action="InputRegression" class="btn btn-secondary w-100">Realizar otro cálculo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card" style="height: 100%;">
+            <div class="card-header">
+                <h3>Gráfica de Dispersión</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="scatterChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var xValues = [@string.Join(",", Model.X)];
+    var yValues = [@string.Join(",", Model.Y)];
+
+    // Calcular la línea de regresión
+    var slope = @Model.Slope;
+    var intercept = @Model.Intercept;
+
+    // Generar puntos para la línea de regresión
+    var regressionLine = xValues.map(function (x) {
+        return { x: x, y: slope * x + intercept };
+    });
+
+    var ctx = document.getElementById('scatterChart').getContext('2d');
+    var scatterChart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+            datasets: [
+                {
+                    label: 'Datos de X e Y',
+                    data: xValues.map(function (x, i) {
+                        return { x: x, y: yValues[i] };
+                    }),
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(255, 99, 132, 0.8)',
+                    pointBorderColor: 'rgba(255, 99, 132, 1)',
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: 'rgba(255, 159, 64, 1)',
+                    pointHoverBorderColor: 'rgba(255, 159, 64, 1)'
+                },
+                {
+                    label: 'Línea de Regresión',
+                    data: regressionLine,
+                    type: 'line',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    backgroundColor: 'rgba(255, 159, 64, 0.3)',
+                    fill: false,
+                    borderWidth: 2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Valores de X',
+                        color: '#333',
+                        font: {
+                            family: 'Arial',
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(200, 200, 200, 0.5)'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Valores de Y',
+                        color: '#333',
+                        font: {
+                            family: 'Arial',
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(200, 200, 200, 0.5)'
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += `X: ${context.parsed.x}, Y: ${context.parsed.y}`;
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#333',
+                        font: {
+                            family: 'Arial',
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<style>
+    .card {
+        margin-bottom: 20px;
+        height: 100%;
+    }
+
+    h2, h3 {
+        color: #333;
+    }
+
+    .btn-secondary {
+        margin-top: 20px;
+    }
+</style>
+
+
+
+
+
+
+
+

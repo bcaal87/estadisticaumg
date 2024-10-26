@@ -1,0 +1,22 @@
+﻿@model StatisticalUMG.Models.BayesModel
+@{
+    ViewData["Title"] = "Calcular Probabilidades con Teorema de Bayes";
+}
+
+<h2>Calcular Probabilidades con Teorema de Bayes</h2>
+
+<form asp-action="CalculateBayes" method="post">
+    <div class="form-group">
+        <label for="priorProbability">Probabilidad Previa (P(A)):</label>
+        <input type="number" step="0.01" class="form-control" name="priorProbability" required />
+    </div>
+    <div class="form-group">
+        <label for="likelihood">Probabilidad Condicional (P(B|A)):</label>
+        <input type="number" step="0.01" class="form-control" name="likelihood" required />
+    </div>
+    <div class="form-group">
+        <label for="marginalProbability">Probabilidad Marginal (P(B)):</label>
+        <input type="number" step="0.01" class="form-control" name="marginalProbability" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>

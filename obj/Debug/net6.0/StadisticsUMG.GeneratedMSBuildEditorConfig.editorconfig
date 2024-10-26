@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StadisticsUMG
+build_property.RootNamespace = StadisticsUMG
+build_property.ProjectDir = C:\Users\Byron Caal\Desktop\Practicas\UMGESTADISTICA\StadisticsUMG\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Byron Caal\Desktop\Practicas\UMGESTADISTICA\StadisticsUMG
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Bayes/BayesResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF5ZXNcQmF5ZXNSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Bayes/InputBayes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF5ZXNcSW5wdXRCYXllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/DistributionResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XERpc3RyaWJ1dGlvblJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/EnterData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XEVudGVyRGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/InputConsolidated.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XElucHV0Q29uc29saWRhdGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/InputNominal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XElucHV0Tm9taW5hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/CentralTendency/SelectDistribution.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VudHJhbFRlbmRlbmN5XFNlbGVjdERpc3RyaWJ1dGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Regression/DisplayRegressionResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVncmVzc2lvblxEaXNwbGF5UmVncmVzc2lvblJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Regression/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVncmVzc2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Regression/InputRegression.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVncmVzc2lvblxJbnB1dFJlZ3Jlc3Npb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Byron Caal/Desktop/Practicas/UMGESTADISTICA/StadisticsUMG/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-jr6p0lawy6

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Ingresar Datos Consolidados";
+}
+
+<div class="container mt-5">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="ProcessConsolidatedData" method="post">
+        <!-- Campo para ingresar los datos consolidados -->
+        <div class="form-group">
+            <label for="consolidatedData">Ingrese los datos consolidados (separados por comas):</label>
+            <textarea class="form-control" id="consolidatedData" name="consolidatedData" rows="4" placeholder="Ejemplo: 5, 10, 15, 20" required></textarea>
+        </div>
+
+        <!-- Selección del tipo de distribución -->
+        <div class="form-group">
+            <label for="distributionType">Seleccionar tipo de distribución:</label>
+            <select class="form-control" id="distributionType" name="distributionType" required>
+                <option value="" disabled selected>Seleccione una distribución</option>
+                <option value="Normal">Normal</option>
+                <option value="Binomial">Binomial</option>
+                <option value="Poisson">Poisson</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+        </div>
+
+        <!-- Botón para enviar los datos -->
+        <button type="submit" class="btn btn-primary">Calcular Medidas de Tendencia Central</button>
+    </form>
+
+    <!-- Mostrar mensajes de error, si existen -->
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger mt-3">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Seleccionar Distribución";
+}
+
+<h2>Seleccionar Tipo de Distribución</h2>
+
+<form asp-action="CalculateCentralTendency" method="post">
+    <div class="form-group">
+        <label for="distributionType">Seleccionar Distribución:</label>
+        <select name="distributionType" class="form-control">
+            <option value="Normal">Normal</option>
+            <option value="Binomial">Binomial</option>
+            <option value="Poisson">Poisson</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular Medidas de Tendencia Central</button>
+</form>
+
+
+
